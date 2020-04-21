@@ -12,7 +12,7 @@ class BankAccount
     @balance += amount
   end 
   
-  def sending (amount)
+  def withdraw (amount)
     @balance -+ amount
   end 
   
