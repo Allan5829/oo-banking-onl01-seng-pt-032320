@@ -22,8 +22,6 @@ class Transfer
     #binding.pry
     if valid? == true && @status == "pending"
       #binding.pry
-      @sender.withdraw (@amount)
-      @receiver.deposit (@amount)
       @sender.balance = @sender.balance - @amount
       @receiver.balance = @receiver.balance + @amount
       @status = "complete"
