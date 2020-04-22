@@ -25,7 +25,7 @@ class Transfer
       @sender.withdraw (@amount)
       @receiver.deposit (@amount)
       @sender.balance -= @amount
-      @receiver.balance = @amount
+      @receiver.balance -= @amount
       @status = "complete"
     elsif (valid? == false) || @status == "complete" 
       @status = "rejected"  
