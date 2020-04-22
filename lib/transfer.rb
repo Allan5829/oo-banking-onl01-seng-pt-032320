@@ -24,8 +24,8 @@ class Transfer
       #binding.pry
       @sender.withdraw (@amount)
       @receiver.deposit (@amount)
-      @sender.balance = @sender.balance
-      @receiver.balance = @receiver.balance
+      @sender.balance = @sender.balance - @amount
+      @receiver.balance = @receiver.balance + @amount
       @status = "complete"
     elsif (valid? == false) || @status == "complete" 
       @status = "rejected"  
