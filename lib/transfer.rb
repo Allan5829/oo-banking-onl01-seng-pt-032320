@@ -21,11 +21,11 @@ class Transfer
   def execute_transaction
     #binding.pry
     if valid? == true && @status == "pending"
-      binding.pry
+      #binding.pry
       @sender.withdraw (@amount)
       @receiver.deposit (@amount)
-      #@sender.balance = @amount
-      #@receiver.balance = @amount
+      @sender.balance = balance - @amount
+      @receiver.balance = balance + @amount
       @status = "complete"
     elsif (valid? == false) || @status == "complete" 
       @status = "rejected"  
